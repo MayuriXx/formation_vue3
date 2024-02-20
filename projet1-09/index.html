@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-09</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>Nom : <span v-text="personne.nom"></span></p>
+        <p>Prenom : <span v-text="personne.prenom"></span></p>
+        <p>Age : <span v-text="personne.age"></span></p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    personne: {
+                        nom: 'Doe',
+                        prenom: 'John',
+                        age: 25
+                    }
+                }
+            },
+        })
+        const vm = app.mount('#app')
+        vm.personne.nom = 'Smith'
+        vm.personne.prenom = 'Jane'
+        vm.personne.age = 30
+    </script>
+</body>
+
+</html>
