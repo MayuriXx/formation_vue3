@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-01</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{message}}</h1>
+        <h2>{{sousTitre}}</h2>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: 'Ma première application Vue 3',
+                    sousTitre: 'Sous-titre'
+                }
+            },
+            })
+        app.mount('#app')
+    </script>
+</body>
+</html>
