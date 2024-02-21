@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1-16</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input type="checkbox" value="html" v-model="cases" />
+            <label for="html">HTML</label>
+        </div>
+
+        <div>
+            <input type="checkbox" value="css" v-model="cases" />
+            <label for="css">CSS</label>
+        </div>
+        <div>
+            <input type="checkbox" value="vueJs" v-model="cases" />
+            <label for="vueJs">VueJS</label>
+        </div>
+        <div>Vous avez choisi: [{{cases}}]</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    cases: [],
+                }
+            },
+        })
+        app.mount('#app')
+    </script>
+</body>
+
+</html>
