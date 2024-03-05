@@ -19,6 +19,16 @@ export default {
   // components: {
   //   HelloWorld
   // }
+  created() {
+    // fetch('https://opentdb.com/api.php?amount=1&category=21')
+    //   .then(response => response.json())
+    //   .then(data => console.log(data));
+
+    this.axios.get('https://opentdb.com/api.php?amount=1&category=21')
+    .then((response) => {
+      console.log(response.data)
+    })
+  }
 }
 
 //https://opentdb.com/api.php?amount=1&category=21 -> API
