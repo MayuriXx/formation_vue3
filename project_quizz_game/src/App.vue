@@ -2,7 +2,7 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
   <!-- <HelloWorld msg="My first VueJS App"/> -->
   <div>
-    <h1>Quizz Game</h1>
+    <h1 v-html="this.question"></h1>
   </div>
   <input type="radio" name="options" value="True">
   <label>True</label><br>
@@ -19,14 +19,19 @@ export default {
   // components: {
   //   HelloWorld
   // }
+  data() {
+    return {
+      question: undefined,
+      incorrectAnswers: undefined,
+      correctAnswer: undefined,
+    }
+  },
   created() {
-    // fetch('https://opentdb.com/api.php?amount=1&category=21')
-    //   .then(response => response.json())
-    //   .then(data => console.log(data));
-
     this.axios.get('https://opentdb.com/api.php?amount=1&category=21')
     .then((response) => {
-      console.log(response.data)
+      this.question = response.data.results[0].question;
+      this.incorrectAnswers = response.data.results[0].incorrect_answers;
+      this.correctAnswer = response.data.results[0].correct_answer;
     })
   }
 }
